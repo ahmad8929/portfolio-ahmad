@@ -17,9 +17,11 @@ const instrument = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000");
+// `||` (not `??`) so an empty env var falls through; URL.canParse guards against malformed values.
+const siteUrlCandidate =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "");
+const siteUrl = URL.canParse(siteUrlCandidate) ? siteUrlCandidate : "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
