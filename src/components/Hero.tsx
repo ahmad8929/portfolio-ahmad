@@ -54,7 +54,7 @@ export default function Hero() {
           >
             {profile.role} crafting{" "}
             <Ticker words={rotatingWords} className="font-bold" wordClassName="text-shimmer" />
-            <br className="hidden sm:block" /> with React &amp; Next.js.
+            <br className="hidden sm:block" /> for web &amp; mobile.
           </p>
           <p
             className="fade-up mt-5 max-w-lg text-base text-paper/60 md:text-lg"
@@ -136,20 +136,20 @@ export default function Hero() {
             className="float absolute -left-4 top-10 rounded-2xl border border-white/10 bg-ink-2/90 px-4 py-3 shadow-xl backdrop-blur sm:-left-10"
             style={{ "--r": "-6deg" } as React.CSSProperties}
           >
-            <p className="font-display text-2xl font-bold text-lime">2+ yrs</p>
-            <p className="text-xs text-paper/60">shipping to production</p>
+            <p className="font-display text-2xl font-bold text-lime">60K+ users</p>
+            <p className="text-xs text-paper/60">on products I build</p>
           </div>
           <div
             className="float-2 absolute -right-2 bottom-16 rounded-2xl bg-coral px-4 py-3 text-ink shadow-xl sm:-right-8"
             style={{ "--r": "5deg" } as React.CSSProperties}
           >
-            <p className="font-display text-lg font-bold">15+ sites live ✦</p>
+            <p className="font-display text-lg font-bold">20+ products shipped ✦</p>
           </div>
           <div
             className="float absolute -bottom-4 left-10 rounded-full bg-paper px-4 py-2 font-mono text-xs font-medium text-ink shadow-xl"
             style={{ "--r": "-3deg" } as React.CSSProperties}
           >
-            &lt;Frontend /&gt; + API
+            Web · Mobile · API
           </div>
         </div>
       </div>

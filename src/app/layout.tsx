@@ -25,13 +25,13 @@ const siteUrl = URL.canParse(siteUrlCandidate) ? siteUrlCandidate : "http://loca
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Mohd Ahmad — Full-Stack Developer",
+  title: "Mohd Ahmad — Full Stack Developer",
   description:
-    "Portfolio of Mohd Ahmad, a Full-Stack Developer specialising in React, Next.js, TypeScript and Node.js. Open to full-time roles and freelance projects.",
+    "Portfolio of Mohd Ahmad, a Full Stack Developer building web and mobile products with React, Next.js, Node.js and Flutter — 60K+ users on products I build. Open to full-time roles and freelance projects.",
   keywords: ["Mohd Ahmad", "Frontend Developer", "Full Stack Developer", "React", "Next.js", "Portfolio", "Delhi"],
   authors: [{ name: "Mohd Ahmad" }],
   openGraph: {
-    title: "Mohd Ahmad — Full-Stack Developer",
+    title: "Mohd Ahmad — Full Stack Developer",
     description: "React · Next.js · TypeScript · Node.js. Open to full-time roles and freelance projects.",
     type: "website",
     images: ["/profile.jpg"],

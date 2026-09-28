@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { experience } from "@/data/portfolio";
 import SectionLabel from "./SectionLabel";
 
@@ -11,8 +12,8 @@ export default function Experience() {
             Where I&apos;ve <span className="font-serif font-normal italic text-coral">shipped</span> things.
           </h2>
           <p data-reveal className="mt-6 max-w-sm text-lg text-ink/65">
-            From a service startup to a Dubai-based product team — two years of building, fixing and owning features in
-            production.
+            From a Shopify store to a Dubai-based platform with 60K+ users — 2.5+ years of building, fixing and owning
+            features in production.
           </p>
         </div>
 
@@ -67,12 +68,20 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap items-center gap-2">
                   {job.stack.map((s) => (
                     <span key={s} className="rounded-md bg-ink px-2.5 py-1 font-mono text-xs text-paper">
                       {s}
                     </span>
                   ))}
+                  {job.caseStudy && (
+                    <Link
+                      href={`/work/${job.caseStudy}`}
+                      className="link-draw ml-auto text-sm font-semibold text-coral"
+                    >
+                      Read case study →
+                    </Link>
+                  )}
                 </div>
               </article>
             </li>

@@ -41,7 +41,7 @@ export default function About() {
             <div className="rounded-3xl bg-ink p-6 text-paper">
               <p className="font-mono text-xs uppercase tracking-widest text-paper/50">Currently</p>
               <p className="mt-2 font-display text-2xl font-semibold">
-                Frontend Developer <span className="text-lime">@ Nasheedio</span>
+                Software Developer <span className="text-lime">@ Nasheedio</span>
               </p>
               <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
                 <div>
@@ -81,7 +81,7 @@ export default function About() {
               className="group bg-paper p-6 transition-colors duration-500 hover:bg-lime md:p-8"
             >
               <p className="font-display text-5xl font-extrabold tracking-tight md:text-6xl">
-                <Counter to={s.value} suffix={s.suffix} />
+                <Counter to={s.value} suffix={s.suffix} decimals={"decimals" in s ? s.decimals : 0} />
               </p>
               <p className="mt-2 text-sm text-ink/60 group-hover:text-ink">{s.label}</p>
             </div>

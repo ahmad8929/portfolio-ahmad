@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { profile } from "@/data/portfolio";
 
@@ -42,18 +43,18 @@ export default function Navbar() {
           scrolled ? "border-white/10 bg-ink/75 shadow-2xl shadow-black/30" : "border-transparent bg-transparent"
         }`}
       >
-        <a href="#top" className="group flex items-center gap-2 font-display text-lg font-bold text-paper">
+        <Link href="/#top" className="group flex items-center gap-2 font-display text-lg font-bold text-paper">
           <span className="grid size-8 place-items-center rounded-full bg-lime text-sm text-ink transition-transform duration-500 group-hover:rotate-[360deg]">
             MA
           </span>
           <span className="hidden sm:inline">{profile.name}</span>
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
             <li key={l.id}>
-              <a
-                href={`#${l.id}`}
+              <Link
+                href={`/#${l.id}`}
                 className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
                   active === l.id ? "text-ink" : "text-paper/70 hover:text-paper"
                 }`}
@@ -64,7 +65,7 @@ export default function Navbar() {
                   }`}
                 />
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -101,9 +102,9 @@ export default function Navbar() {
         }`}
       >
         {links.map((l, i) => (
-          <a
+          <Link
             key={l.id}
-            href={`#${l.id}`}
+            href={`/#${l.id}`}
             onClick={() => setOpen(false)}
             className={`font-display text-5xl font-bold text-paper transition-all duration-700 ${
               open ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
@@ -112,7 +113,7 @@ export default function Navbar() {
           >
             {l.label}
             <span className="text-lime">.</span>
-          </a>
+          </Link>
         ))}
         <a href={profile.resume} download className="mt-6 text-lg text-lime" onClick={() => setOpen(false)}>
           Download resume ↓

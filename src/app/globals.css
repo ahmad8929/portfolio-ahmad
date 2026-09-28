@@ -300,6 +300,33 @@ body {
   .ticket { --at: calc(100% - 10rem - 1px); }
 }
 
+/* Phone mockup */
+.phone {
+  aspect-ratio: 9 / 19;
+  border-radius: 1.6rem;
+  padding: 6px;
+  background: linear-gradient(145deg, #2a2a36, #0e0e14);
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.08) inset,
+    0 30px 60px -15px rgb(0 0 0 / 0.6);
+}
+.phone-screen {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  background: #fff;
+}
+
+/* Grid texture for generated project covers */
+.art-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at 50% 50%, #000 20%, transparent 75%);
+}
+
 /* Underline that draws on hover */
 .link-draw {
   background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 1.5px;

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
+export default function Counter({ to, suffix = "", decimals = 0 }: { to: number; suffix?: string; decimals?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const [n, setN] = useState(0);
 
@@ -17,7 +17,7 @@ export default function Counter({ to, suffix = "" }: { to: number; suffix?: stri
       const dur = 1600;
       const tick = (t: number) => {
         const p = Math.min((t - start) / dur, 1);
-        setN(Math.round(to * (1 - Math.pow(1 - p, 4))));
+        setN(to * (1 - Math.pow(1 - p, 4)));
         if (p < 1) raf = requestAnimationFrame(tick);
       };
       raf = requestAnimationFrame(tick);
@@ -31,7 +31,7 @@ export default function Counter({ to, suffix = "" }: { to: number; suffix?: stri
 
   return (
     <span ref={ref} className="tabular-nums">
-      {n}
+      {n.toFixed(decimals)}
       {suffix}
     </span>
   );
