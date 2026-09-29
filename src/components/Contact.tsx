@@ -3,11 +3,9 @@
 import { useState } from "react";
 import { profile } from "@/data/portfolio";
 import SectionLabel from "./SectionLabel";
+import { sendMessage } from "@/lib/sendMessage";
 
-// Free key from https://web3forms.com (sent to your inbox). Without it the form falls back to opening the mail app.
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
-
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sending" | "sent" | "mailto" | "error";
 
 const topics = ["Full-time role", "Freelance project", "Just saying hi"];
 
@@ -20,35 +18,16 @@ export default function Contact() {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const message = String(data.get("message") ?? "");
-
-    if (!WEB3FORMS_KEY) {
-      const body = `${message}\n\n— ${name} (${email})`;
-      window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(`${topic} — from ${name}`)}&body=${encodeURIComponent(body)}`;
-      return;
-    }
-
     setStatus("sending");
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: `Portfolio: ${topic} — from ${name}`,
-          from_name: name,
-          name,
-          email,
-          topic,
-          message,
-        }),
+      const result = await sendMessage({
+        name: String(data.get("name") ?? ""),
+        email: String(data.get("email") ?? ""),
+        message: String(data.get("message") ?? ""),
+        topic,
       });
-      const json = await res.json();
-      if (!json.success) throw new Error(json.message);
-      setStatus("sent");
-      form.reset();
+      setStatus(result);
+      if (result === "sent") form.reset();
     } catch {
       setStatus("error");
     }
@@ -176,6 +155,9 @@ export default function Contact() {
               {status === "sending" ? "Sending…" : status === "sent" ? "Message sent — talk soon!" : "Send message"}
               <span className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-rotate-45">→</span>
             </button>
+            {status === "mailto" && (
+              <p className="mt-4 text-center text-sm text-ink/60">Your email app opened with the message ready — just hit send.</p>
+            )}
             {status === "error" && (
               <p className="mt-4 text-center text-sm text-coral">
                 Something went wrong — please email me directly at {profile.email}.

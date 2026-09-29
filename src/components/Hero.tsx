@@ -54,7 +54,7 @@ export default function Hero() {
           >
             {profile.role} crafting{" "}
             <Ticker words={rotatingWords} className="font-bold" wordClassName="text-shimmer" />
-            <br className="hidden sm:block" /> for web &amp; mobile.
+            <br className="hidden sm:block" /> end to end.
           </p>
           <p
             className="fade-up mt-5 max-w-lg text-base text-paper/60 md:text-lg"
@@ -77,12 +77,14 @@ export default function Hero() {
               </a>
             </span>
             <span data-magnetic className="inline-block transition-transform duration-300 ease-out">
-              <a
-                href="#contact"
+              <button
+                type="button"
+                data-contact
                 className="btn-fill inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 font-semibold transition-colors duration-500 [--fill:var(--color-paper)] hover:text-ink"
               >
                 Let&apos;s talk
-              </a>
+                <span aria-hidden>✉</span>
+              </button>
             </span>
             <div className="flex gap-2">
               <a
@@ -108,6 +110,29 @@ export default function Hero() {
                 </svg>
               </a>
             </div>
+          </div>
+
+          {/* Direct contact */}
+          <div
+            className="fade-up mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm"
+            style={{ "--d": "1100ms" } as React.CSSProperties}
+          >
+            <a href={`mailto:${profile.email}`} className="group inline-flex items-center gap-2.5 text-paper/70 transition-colors hover:text-paper">
+              <span className="grid size-8 place-items-center rounded-full bg-lime/10 text-lime transition-colors group-hover:bg-lime group-hover:text-ink">
+                <svg viewBox="0 0 24 24" className="size-4 fill-current" aria-hidden>
+                  <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z" />
+                </svg>
+              </span>
+              <span className="link-draw">{profile.email}</span>
+            </a>
+            <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="group inline-flex items-center gap-2.5 text-paper/70 transition-colors hover:text-paper">
+              <span className="grid size-8 place-items-center rounded-full bg-lime/10 text-lime transition-colors group-hover:bg-lime group-hover:text-ink">
+                <svg viewBox="0 0 24 24" className="size-4 fill-current" aria-hidden>
+                  <path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1l-2.2 2.2Z" />
+                </svg>
+              </span>
+              <span className="link-draw">{profile.phone}</span>
+            </a>
           </div>
         </div>
 

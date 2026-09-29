@@ -81,7 +81,7 @@ export default function About() {
               className="group bg-paper p-6 transition-colors duration-500 hover:bg-lime md:p-8"
             >
               <p className="font-display text-5xl font-extrabold tracking-tight md:text-6xl">
-                <Counter to={s.value} suffix={s.suffix} decimals={"decimals" in s ? s.decimals : 0} />
+                <Counter to={s.value} suffix={s.suffix} />
               </p>
               <p className="mt-2 text-sm text-ink/60 group-hover:text-ink">{s.label}</p>
             </div>

@@ -6,7 +6,7 @@ export const profile = {
   lastName: "Ahmad",
   role: "Full Stack Developer",
   tagline:
-    "I ship production web and mobile products — from pixel-perfect interfaces to the APIs, databases and pipelines behind them.",
+    "I ship production products used by 60K+ people — from pixel-perfect interfaces to the APIs, databases and app-store releases behind them.",
   location: "Delhi, India",
   email: "m.ahmad8929@gmail.com",
   phone: "+91 8929691406",
@@ -19,7 +19,7 @@ export const profile = {
   },
 };
 
-export const rotatingWords = ["streaming platforms", "mobile apps", "admin panels", "storefronts", "dashboards"];
+export const rotatingWords = ["streaming platforms", "admin panels", "booking platforms", "storefronts", "dashboards"];
 
 export const heroStats = [
   { value: "60K+", label: "users on products I build" },
@@ -30,13 +30,13 @@ export const about = {
   paragraphs: [
     "I'm a Full Stack Developer who likes owning a product end to end — the easing on a hover, the layout that holds up at 320px, the API that answers in milliseconds, and the pipeline that ships it.",
     "Right now I build Nasheedio, a Dubai-based audio platform with 60K+ users — its listener app, Creator Studio, the admin panel the content team uses to manage 130K+ audios, and the analytics dashboard used by the CEO and core team.",
-    "Before that I shipped a Flutter pet-care app to both app stores, e-commerce stores for fashion and fragrance brands, and full booking platforms for salon businesses — web, mobile and backend.",
+    "Before that I built the Laravel backend and handled App Store & Play Store releases for a pet-care app, shipped e-commerce stores for fashion brands, and rebuilt a salon booking platform as a typed Node.js SaaS.",
   ],
   stats: [
     { value: 60, suffix: "K+", label: "Users on Nasheedio" },
     { value: 130, suffix: "K+", label: "Audios managed via admin" },
     { value: 20, suffix: "+", label: "Products shipped" },
-    { value: 2.5, suffix: "+ yrs", label: "Production experience", decimals: 1 },
+    { value: 2, suffix: "+ yrs", label: "Production experience" },
   ],
 };
 
@@ -62,16 +62,16 @@ export const skills: SkillGroup[] = [
     accent: "violet",
   },
   {
-    title: "Mobile, Data & DevOps",
+    title: "Data, DevOps & Releases",
     blurb: "From schema to app store.",
-    items: ["Flutter", "Firebase", "PostgreSQL", "MongoDB", "Redis", "Docker", "Google Cloud", "CI/CD"],
+    items: ["PostgreSQL", "MongoDB", "Redis", "Docker", "Google Cloud", "CI/CD", "App Store & Play Store", "Firebase"],
     accent: "sky",
   },
 ];
 
 export const marqueeTech = [
-  "React", "Next.js", "TypeScript", "Node.js", "Flutter", "Laravel", "PostgreSQL", "MongoDB",
-  "Prisma", "Tailwind CSS", "Docker", "Google Cloud", "Redis", "Firebase",
+  "React", "Next.js", "TypeScript", "Node.js", "Laravel", "Express", "PostgreSQL", "MongoDB",
+  "Prisma", "Tailwind CSS", "Docker", "Google Cloud", "Redis", "App Store & Play Store",
 ];
 
 export type Experience = {
@@ -109,17 +109,17 @@ export const experience: Experience[] = [
   },
   {
     company: "Pet Basket",
-    role: "Flutter & Full Stack Developer",
+    role: "Full Stack Developer",
     type: "Contract",
     period: "Mar 2025 — Jun 2025",
     location: "India",
     about: "A pet marketplace & services app — pets, accessories, grooming and vet care.",
     points: [
-      "Core developer (team of 3) of the Flutter app — 400+ downloads on Play Store and App Store.",
-      "Implemented Firebase auth (Google, Facebook, Apple), push notifications, cart and Razorpay checkout.",
-      "Built most of the 20-module Laravel admin panel and REST APIs, plus a Codemagic CI/CD pipeline.",
+      "Built most of the 20-module Laravel admin panel and REST APIs — listings, offers, orders and RBAC.",
+      "Integrated Firebase auth (Google, Facebook, Apple), push notifications and Razorpay payments across app and API.",
+      "Handled App Store & Play Store deployment — builds, signing and store submissions via Codemagic CI/CD.",
     ],
-    stack: ["Flutter", "Laravel", "Firebase", "Razorpay", "Codemagic"],
+    stack: ["Laravel", "REST APIs", "Firebase", "Razorpay", "Codemagic", "App Store"],
     link: "https://play.google.com/store/apps/details?id=in.centeosclients.petbasket",
     caseStudy: "pet-basket",
   },
@@ -136,20 +136,6 @@ export const experience: Experience[] = [
     ],
     stack: ["React", "Redux", "Ant Design", "REST APIs"],
     link: "https://techplutonic.com",
-  },
-  {
-    company: "RxR Perfumery",
-    role: "E-commerce Developer",
-    type: "Full-time",
-    period: "Mar 2024 — Aug 2024",
-    location: "Delhi, India",
-    about: "A Delhi-based fragrance brand growing its business through online sales.",
-    points: [
-      "Developed and launched the brand's e-commerce store on Shopify — catalog, checkout and payment integration.",
-      "Built a responsive, mobile-first storefront that improved customer engagement and retention.",
-    ],
-    stack: ["Shopify", "HTML", "CSS", "JavaScript"],
-    link: "https://www.rxrperfumery.in",
   },
 ];
 
@@ -324,7 +310,7 @@ export const projects: Project[] = [
     platforms: ["Mobile", "Web", "Backend"],
     summary:
       "Customer app, provider app, admin backend and website for a Delhi at-home salon brand — live on Google Play with a 5.0 rating.",
-    stack: ["Flutter", "Next.js", "PHP", "CodeIgniter", "MySQL", "Firebase", "Google Maps", "Codemagic"],
+    stack: ["Next.js", "PHP", "CodeIgniter", "MySQL", "Firebase", "Codemagic", "App Store", "Google Play", "Flutter"],
     accent: "#ff4fa3",
     cover: "/projects/anglehome-web.jpg",
     phones: ["/projects/store/anglehome-1.jpg", "/projects/store/anglehome-2.jpg", "/projects/store/anglehome-3.jpg", "/projects/store/anglehome-4.jpg", "/projects/store/anglehome-5.jpg", "/projects/store/anglehome-6.jpg"],
@@ -343,12 +329,12 @@ export const projects: Project[] = [
       metrics: [
         { value: "4", label: "Codebases shipped" },
         { value: "5.0★", label: "Google Play rating" },
-        { value: "2", label: "Flutter apps" },
+        { value: "2", label: "Store releases" },
         { value: "6 mo", label: "Launch & maintenance" },
       ],
       sections: [
         {
-          title: "Customer app (Flutter)",
+          title: "Customer app & store releases",
           points: [
             "Passwordless phone login, redesigned splash & onboarding, and checkout / address fixes.",
             "Firebase push notifications, location-based service discovery and Meta Ads SDK for campaigns.",
@@ -376,23 +362,23 @@ export const projects: Project[] = [
   {
     slug: "pet-basket",
     name: "Pet Basket",
-    kind: "Contract · Pet marketplace app",
+    kind: "Contract · Pet marketplace platform",
     category: "Company",
     platforms: ["Mobile", "Backend"],
     summary:
-      "A Flutter app to buy pets and accessories and book grooming & vet care — 400+ downloads on Play Store and App Store.",
-    stack: ["Flutter", "Provider", "Firebase Auth", "FCM", "Razorpay", "Google Maps", "Laravel 12", "Sanctum", "Codemagic"],
+      "Pet marketplace app with 400+ downloads — I built the Laravel admin & APIs, integrations and App Store / Play Store releases.",
+    stack: ["Laravel 12", "Sanctum", "REST APIs", "Firebase Auth", "FCM", "Razorpay", "Codemagic", "App Store Connect", "Google Play Console"],
     accent: "#ffc700",
     phones: ["/projects/store/petbasket-1.jpg", "/projects/store/petbasket-2.jpg", "/projects/store/petbasket-3.jpg", "/projects/store/petbasket-4.jpg", "/projects/store/petbasket-5.jpg", "/projects/store/petbasket-6.jpg"],
     icon: "/projects/store/petbasket-icon.png",
     links: [{ label: "Google Play", href: "https://play.google.com/store/apps/details?id=in.centeosclients.petbasket" }],
     featured: true,
     caseStudy: {
-      role: "Flutter & Full Stack Developer",
+      role: "Full Stack Developer",
       period: "Mar 2025 — Jun 2025",
       team: "Team of 3 · top committer",
       overview:
-        "Pet Basket is a one-stop app for pet parents — buy pets and accessories, book grooming and training, and consult vets. I was the top committer on both the Flutter app and the Laravel backend.",
+        "Pet Basket is a one-stop app for pet parents — buy pets and accessories, book grooming and training, and consult vets. I owned the Laravel backend and admin, the app's payment & auth integrations, and its releases to both stores.",
       metrics: [
         { value: "400+", label: "Downloads" },
         { value: "2", label: "App stores" },
@@ -401,23 +387,25 @@ export const projects: Project[] = [
       ],
       sections: [
         {
-          title: "Flutter app",
-          points: [
-            "Firebase authentication with Google, Facebook and Sign in with Apple.",
-            "Cart, checkout and Razorpay payments, wishlist and order history.",
-            "Pincode-based delivery checks with Google Maps geolocation and push notifications via FCM.",
-          ],
-        },
-        {
           title: "Laravel backend & admin",
           points: [
             "Built most of the 20-module admin panel — pet listings, breeds, banners & offers, grooming, COD collection.",
-            "User and role management, REST APIs secured with Sanctum.",
+            "User and role management (RBAC) and REST APIs secured with Sanctum.",
           ],
         },
         {
-          title: "Release",
-          points: ["Codemagic CI/CD pipeline for signed iOS builds and App Store Connect releases."],
+          title: "Integrations",
+          points: [
+            "Firebase authentication with Google, Facebook and Sign in with Apple, wired through app and API.",
+            "Razorpay payments, push notifications via FCM and pincode-based delivery checks.",
+          ],
+        },
+        {
+          title: "App Store & Play Store deployment",
+          points: [
+            "Handled release builds, code signing and store submissions for both platforms.",
+            "Codemagic CI/CD pipeline for signed iOS builds straight to App Store Connect.",
+          ],
         },
       ],
     },
@@ -431,15 +419,15 @@ export const projects: Project[] = [
     category: "Client",
     platforms: ["Backend", "Web", "Mobile"],
     summary:
-      "Rebuilt a legacy PHP booking platform as a typed Node.js SaaS — new REST API, Next.js admin panel and a migrated Flutter app.",
-    stack: ["Node.js 20", "TypeScript", "Express", "PostgreSQL", "Prisma", "Zod", "Docker", "Vitest", "Swagger", "Next.js", "TanStack Table", "Flutter"],
+      "Rebuilt a legacy PHP booking platform as a typed Node.js SaaS — new REST API, Next.js admin panel and a customer app moved onto it.",
+    stack: ["Node.js 20", "TypeScript", "Express", "PostgreSQL", "Prisma", "Zod", "Docker", "Vitest", "Swagger", "Next.js", "TanStack Table"],
     accent: "#e8739a",
     caseStudy: {
       role: "Full Stack Developer (freelance)",
       period: "Jul 2026 — Aug 2026",
       team: "Solo",
       overview:
-        "Centros Salon ran on a legacy PHP system with ~180 POST-only RPC endpoints and business logic spread across hundreds of helpers. I designed and built a clean replacement — then migrated the admin and the Flutter app onto it.",
+        "Centros Salon ran on a legacy PHP system with ~180 POST-only RPC endpoints and business logic spread across hundreds of helpers. I designed and built a clean replacement — then moved the admin panel and the customer app onto it.",
       metrics: [
         { value: "20", label: "API modules" },
         { value: "48", label: "Database models" },
@@ -464,7 +452,7 @@ export const projects: Project[] = [
           ],
         },
         {
-          title: "Flutter app migration",
+          title: "Customer app migration",
           points: [
             "Moved the customer app off the legacy backend in 18 milestones — auth, discovery, booking, shop, notifications.",
             "Redesigned the experience with a new design foundation and removed dead legacy code.",
@@ -605,8 +593,8 @@ export const projects: Project[] = [
     kind: "Client · School store",
     category: "Client",
     platforms: ["Web", "Mobile", "Backend"],
-    summary: "Used & new books, uniforms and stationery — a Next.js store, a Flutter app and a Node.js API.",
-    stack: ["Next.js", "Flutter", "Node.js", "Express"],
+    summary: "Used & new books, uniforms and stationery — a Next.js store, a mobile app and a Node.js API.",
+    stack: ["Next.js", "Node.js", "Express"],
     accent: "#4cc9f0",
     cover: "/projects/gyanhub.jpg",
     links: [{ label: "Live", href: "https://gh-web-ten.vercel.app" }],
@@ -634,18 +622,6 @@ export const projects: Project[] = [
     accent: "#c8f135",
     cover: "/projects/vidyasetu.jpg",
     links: [{ label: "Live", href: "https://ngo-lake-delta.vercel.app" }],
-  },
-  {
-    slug: "rxr",
-    name: "RxR Perfumery",
-    kind: "Company · Shopify store",
-    category: "Company",
-    platforms: ["Web"],
-    summary: "The brand's Shopify e-commerce store — catalog, checkout and a mobile-first theme.",
-    stack: ["Shopify", "CSS", "JavaScript"],
-    accent: "#ff5c39",
-    cover: "/projects/rxr.jpg",
-    links: [{ label: "Live", href: "https://www.rxrperfumery.in" }],
   },
   {
     slug: "cocus",

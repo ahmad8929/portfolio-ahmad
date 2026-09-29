@@ -12,7 +12,7 @@ export default function Experience() {
             Where I&apos;ve <span className="font-serif font-normal italic text-coral">shipped</span> things.
           </h2>
           <p data-reveal className="mt-6 max-w-sm text-lg text-ink/65">
-            From a Shopify store to a Dubai-based platform with 60K+ users — 2.5+ years of building, fixing and owning
+            From an agile services team to a Dubai-based platform with 60K+ users — 2+ years of building, shipping and owning
             features in production.
           </p>
         </div>

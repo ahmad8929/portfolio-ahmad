@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import ContactModal from "@/components/ContactModal";
 import "./globals.css";
 
 // Static weights (not the variable font) so outlined text has no overlapping inner contours.
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Mohd Ahmad — Full Stack Developer",
   description:
-    "Portfolio of Mohd Ahmad, a Full Stack Developer building web and mobile products with React, Next.js, Node.js and Flutter — 60K+ users on products I build. Open to full-time roles and freelance projects.",
+    "Portfolio of Mohd Ahmad, a Full Stack Developer building production products with React, Next.js, Node.js and Laravel — 60K+ users on products I build. Open to full-time roles and freelance projects.",
   keywords: ["Mohd Ahmad", "Frontend Developer", "Full Stack Developer", "React", "Next.js", "Portfolio", "Delhi"],
   authors: [{ name: "Mohd Ahmad" }],
   openGraph: {
@@ -48,7 +49,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="en"
       className={`${bricolage.variable} ${geist.variable} ${geistMono.variable} ${instrument.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <ContactModal />
+      </body>
     </html>
   );
 }
