@@ -192,10 +192,11 @@ export const projects: Project[] = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind", "Material UI", "Zustand", "TanStack Query", "Firebase", "Node.js", "Express", "PostgreSQL", "Google Cloud Storage"],
     accent: "#c8f135",
     cover: "/projects/nasheedio-app.jpg",
-    gallery: ["/projects/nasheedio-awards.jpg", "/projects/nasheedio.jpg"],
+    gallery: ["/projects/nasheedio-creators.jpg", "/projects/nasheedio-awards.jpg"],
     links: [
       { label: "Web app", href: "https://app.nasheedio.com" },
-      { label: "Creator Awards '26", href: "https://nasheediocreatoraward.vercel.app" },
+      { label: "Creator Studio", href: "https://creators.nasheedio.com" },
+      { label: "Creator Awards '26", href: "https://awards.nasheedio.com" },
     ],
     featured: true,
     caseStudy: {
@@ -309,7 +310,7 @@ export const projects: Project[] = [
     category: "Client",
     platforms: ["Mobile", "Web", "Backend"],
     summary:
-      "Customer app, provider app, admin backend and website for a Delhi at-home salon brand — live on Google Play with a 5.0 rating.",
+      "Customer app, provider app, admin backend and website for a Delhi at-home salon brand — live on the App Store and Google Play.",
     stack: ["Next.js", "PHP", "CodeIgniter", "MySQL", "Firebase", "Codemagic", "App Store", "Google Play", "Flutter"],
     accent: "#ff4fa3",
     cover: "/projects/anglehome-web.jpg",
@@ -318,6 +319,7 @@ export const projects: Project[] = [
     links: [
       { label: "Website", href: "https://angelhomesalon.com" },
       { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.angelhomesalon.customer" },
+      { label: "App Store", href: "https://apps.apple.com/in/app/angel-home-salon/id6786026628" },
     ],
     featured: true,
     caseStudy: {
@@ -328,7 +330,7 @@ export const projects: Project[] = [
         "Angel Home Salon brings salon services to customers' homes across Delhi NCR. I took a white-label on-demand services platform (eDemand) and turned it into their product — rebranding, new features, store compliance and launch — across four codebases.",
       metrics: [
         { value: "4", label: "Codebases shipped" },
-        { value: "5.0★", label: "Google Play rating" },
+        { value: "iOS + Android", label: "Live on both stores" },
         { value: "2", label: "Store releases" },
         { value: "6 mo", label: "Launch & maintenance" },
       ],

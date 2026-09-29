@@ -56,21 +56,60 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               ← All work
             </Link>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              {p.icon && <Image src={p.icon} alt="" width={56} height={56} className="fade-up rounded-2xl" />}
-              <p className="fade-up font-mono text-sm uppercase tracking-widest" style={{ color: p.accent, "--d": "80ms" } as React.CSSProperties}>
-                {p.kind}
-              </p>
+            <div className="grid items-end gap-12 lg:grid-cols-[1.35fr_1fr]">
+              <div>
+                <div className="mt-10 flex flex-wrap items-center gap-4">
+                  {p.icon && <Image src={p.icon} alt="" width={56} height={56} className="fade-up rounded-2xl" />}
+                  <p className="fade-up font-mono text-sm uppercase tracking-widest" style={{ color: p.accent, "--d": "80ms" } as React.CSSProperties}>
+                    {p.kind}
+                  </p>
+                </div>
+                <h1
+                  className="fade-up mt-4 font-display text-[clamp(3rem,8vw,6.5rem)] font-extrabold leading-[0.9] tracking-tight"
+                  style={{ "--d": "120ms" } as React.CSSProperties}
+                >
+                  {p.name}
+                </h1>
+                <p className="fade-up mt-8 max-w-2xl text-xl text-paper/70" style={{ "--d": "220ms" } as React.CSSProperties}>
+                  {p.summary}
+                </p>
+              </div>
+
+              {/* At a glance */}
+              <aside
+                data-spot
+                className="glow-card fade-up rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md [--glow:var(--accent)]"
+                style={{ "--d": "300ms" } as React.CSSProperties}
+              >
+                <div className="flex items-center justify-between">
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-paper/50">At a glance</p>
+                  {p.links?.length ? (
+                    <span className="flex items-center gap-2 rounded-full bg-lime/10 px-3 py-1 text-xs font-semibold text-lime">
+                      <span className="pulse-dot size-1.5 rounded-full bg-lime" /> Live
+                    </span>
+                  ) : (
+                    <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-paper/60">Private</span>
+                  )}
+                </div>
+                <dl className="mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-white/10">
+                  {cs.metrics.map((m) => (
+                    <div key={m.label} className="flex flex-col bg-ink-2/90 p-4">
+                      <dt className="order-2 mt-1 text-xs text-paper/50">{m.label}</dt>
+                      <dd className="font-display text-2xl font-bold" style={{ color: p.accent }}>
+                        {m.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+                <ul className="mt-5 flex flex-wrap gap-1.5">
+                  {p.stack.slice(0, 6).map((s) => (
+                    <li key={s} className="rounded-full border border-white/10 px-2.5 py-1 font-mono text-[11px] text-paper/70">
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
             </div>
-            <h1
-              className="fade-up mt-4 max-w-5xl font-display text-[clamp(3rem,9vw,7.5rem)] font-extrabold leading-[0.9] tracking-tight"
-              style={{ "--d": "120ms" } as React.CSSProperties}
-            >
-              {p.name}
-            </h1>
-            <p className="fade-up mt-8 max-w-2xl text-xl text-paper/70" style={{ "--d": "220ms" } as React.CSSProperties}>
-              {p.summary}
-            </p>
 
             <dl
               className="fade-up mt-12 grid gap-6 border-t border-white/10 pt-8 sm:grid-cols-2 lg:grid-cols-4"
@@ -141,21 +180,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         {/* ---------- Metrics ---------- */}
         <section className="surface-light sheet grain py-20 md:py-28">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-ink/10 md:grid-cols-4">
-              {cs.metrics.map((m, i) => (
-                <div
-                  key={m.label}
-                  data-reveal
-                  style={{ "--d": `${i * 80}ms` } as React.CSSProperties}
-                  className="bg-paper p-6 md:p-8"
-                >
-                  <p className="font-display text-4xl font-extrabold tracking-tight md:text-5xl">{m.value}</p>
-                  <p className="mt-2 text-sm text-ink/60">{m.label}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-20 grid gap-10 lg:grid-cols-[1fr_2fr]">
+            <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
               <p data-reveal className="font-mono text-sm uppercase tracking-[0.2em] text-coral">Overview</p>
               <p data-reveal className="font-display text-2xl leading-snug md:text-3xl">
                 {cs.overview}
