@@ -23,6 +23,22 @@ function Card({ p, i }: { p: Project; i: number }) {
             sizes="(max-width: 640px) 95vw, (max-width: 1024px) 48vw, 400px"
             className="object-cover object-top transition-transform duration-[1.2s] ease-[var(--ease-out-expo)] group-hover:scale-110"
           />
+        ) : p.phones?.length ? (
+          <div className="relative flex size-full items-end justify-center gap-3 overflow-hidden bg-ink-2 px-6 pt-6">
+            <div className="absolute size-2/3 rounded-full opacity-30 blur-3xl" style={{ background: p.accent }} aria-hidden />
+            {p.phones.slice(0, 3).map((src, k) => (
+              <div
+                key={src}
+                className={`phone relative w-[28%] transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:-translate-y-2 ${
+                  k === 1 ? "translate-y-2" : "translate-y-8"
+                }`}
+              >
+                <div className="phone-screen">
+                  <Image src={src} alt={`${p.name} screen`} fill sizes="120px" className="object-cover object-top" />
+                </div>
+              </div>
+            ))}
+          </div>
         ) : (
           <ArtCover name={p.name} accent={p.accent} kind={p.kind} />
         )}
@@ -77,10 +93,10 @@ export default function MoreProjects() {
   return (
     <section id="projects" className="surface-light sheet grain py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionLabel index="05" label="More projects" />
+        <SectionLabel index="05" label="All projects" />
         <div className="flex flex-wrap items-end justify-between gap-8">
           <h2 data-reveal className="max-w-3xl font-display text-[clamp(2.2rem,5.5vw,4.5rem)] font-bold leading-[1.02] tracking-tight">
-            Platforms, stores &amp; <span className="font-serif font-normal italic text-violet">side builds</span>.
+            Everything I&apos;ve <span className="font-serif font-normal italic text-violet">shipped</span>.
           </h2>
 
           <div data-reveal className="flex flex-wrap gap-1.5 rounded-full bg-ink/5 p-1.5" role="tablist">
