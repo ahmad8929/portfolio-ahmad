@@ -161,6 +161,8 @@ export type Project = {
   cover?: string;
   /** Extra wide screenshots for the case study */
   gallery?: string[];
+  /** Tall full-page screenshot — the card preview scrolls through it on hover */
+  scrollShot?: string;
   /** Phone screenshots (portrait) */
   phones?: string[];
   icon?: string;
@@ -183,6 +185,7 @@ export const projects: Project[] = [
   /* ---------------- Featured case studies ---------------- */
   {
     slug: "nasheedio",
+    scrollShot: "/projects/tall/nasheedio-app.jpg",
     name: "Nasheedio",
     kind: "Company · Audio streaming platform",
     category: "Company",
@@ -305,6 +308,7 @@ export const projects: Project[] = [
   },
   {
     slug: "angel-home-salon",
+    scrollShot: "/projects/tall/anglehome-web.jpg",
     name: "Angel Home Salon",
     kind: "Client · On-demand salon services",
     category: "Client",
@@ -416,6 +420,7 @@ export const projects: Project[] = [
   /* ---------------- More case studies ---------------- */
   {
     slug: "marvels",
+    scrollShot: "/projects/tall/marvel.jpg",
     name: "Marvel's Online Clothings",
     kind: "Client · E-commerce platform",
     category: "Client",
@@ -429,7 +434,6 @@ export const projects: Project[] = [
     links: [
       { label: "Live site", href: "https://www.marvelsazamgarh.in" },
       { label: "Storefront code", href: "https://github.com/ahmad8929/marvel" },
-      { label: "Admin code", href: "https://github.com/ahmad8929/marvel-admin" },
     ],
     caseStudy: {
       role: "Full Stack Developer (freelance)",
@@ -466,6 +470,7 @@ export const projects: Project[] = [
   /* ---------------- Grid-only projects ---------------- */
   {
     slug: "gyan-hub",
+    scrollShot: "/projects/tall/gyanhub.jpg",
     name: "Gyan Hub",
     kind: "Client · School store",
     category: "Client",
@@ -498,18 +503,19 @@ export const projects: Project[] = [
     stack: ["Next.js 16", "TypeScript", "Tailwind v4", "Playwright"],
     accent: "#c9a46a",
     cover: "/projects/metalwoodblast.jpg",
-    links: [{ label: "Code", href: "https://github.com/ahmad8929/metal_and_woodblast" }],
+    links: [{ label: "Live", href: "https://metalandwoodblast.vercel.app" }],
   },
   {
     slug: "puffy-woods",
-    name: "Puffy Woods",
+    name: "PouffyWood",
     kind: "Client · Furniture e-commerce",
     category: "Client",
     platforms: ["Web", "Backend"],
-    summary: "Furniture store with COD checkout, coupons, order tracking and a full admin panel.",
+    summary: "Handcrafted furniture store for Indian homes — COD checkout, coupons, order tracking and a full admin panel.",
     stack: ["Next.js", "Supabase", "GSAP", "Zustand", "Zod"],
-    accent: "#c9a46a",
-    links: [{ label: "Code", href: "https://github.com/ahmad8929/puffy-woods" }],
+    accent: "#6b7d4f",
+    cover: "/projects/puffy.jpg",
+    links: [{ label: "Live", href: "https://www.pouffywood.com" }],
   },
 ];
 
